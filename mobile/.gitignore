@@ -9,6 +9,6 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-
+nlwcopa-mobile-components-main
 # macOS
 .DS_Store
