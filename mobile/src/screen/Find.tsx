@@ -58,7 +58,7 @@ export function Find() {
 
   return (
     <VStack flex={1} bgColor="gray.900"> 
-      <Header title="Buscar Bolão por código" showBackButton/>
+      <Header title="Buscar Bolão por código" showBackButton onShare={() => {}}/>
 
       <VStack mt={8} mx={5} alignItems="center">
         <Heading fontFamily="heading" color="white" fontSize="xl" mb={8} textAlign="center">
