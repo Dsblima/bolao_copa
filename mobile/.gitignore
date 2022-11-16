@@ -10,5 +10,6 @@ npm-debug.*
 *.orig.*
 web-build/
 nlwcopa-mobile-components-main
+.env
 # macOS
 .DS_Store

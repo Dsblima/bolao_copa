@@ -5,12 +5,14 @@ import { api } from "../services/api";
 
 import { Game, GameProps } from '../components/Game';
 import { Loading } from '../components/Loading';
+import { EmptyMyPoolList } from '../components/EmptyMyPoolList';
 
 interface Props {
   poolId: string;
+  code: string;
 }
 
-export function Guesses({ poolId }: Props) {
+export function Guesses({ poolId, code }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const [firstTeamPoints, setFirstTeamPoints] = useState('');
   const [secondTeamPoints, setSecondTeamPoints] = useState('');
@@ -39,7 +41,7 @@ export function Guesses({ poolId }: Props) {
 
   async function handleGuessConfirm(gameId:string) {
     try {
-      console.log("register guess")
+
       if(!firstTeamPoints.trim() || !secondTeamPoints.trim()) {
         return toast.show({
           title: "Informe o placar do palpite!",
@@ -90,8 +92,8 @@ export function Guesses({ poolId }: Props) {
           onGuessConfirm={() => handleGuessConfirm(item.id)}
         />
       )}
-
       _contentContainerStyle={{pb: 10}}
+      ListEmptyComponent={() => <EmptyMyPoolList code={code}/>}
     />
   );
 }
